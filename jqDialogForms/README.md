@@ -176,7 +176,7 @@ Demonstrates a parent's "ownership" of a child window, forcing the child window 
 
 Demonstrates a parent's "ownership" of a child window, forcing the child window to stay on top of the parent window, and blocking the parent's input fields until the child window is closed.
 
-<script language="javascript" type="text/javascript">function demo_parent_child_field_blocking() { var parent = new DialogWindow('Parent: Try to close me'); parent.show(); var child = new DialogWindow('Child: Close me to access parent', { modal: 'parent' }, parent); child.show(); parent.el.style.left = (parseInt(parent.el.style.left.replace(/px/, '')) - 170).toString() + 'px'; parent.el.style.top = (parseInt(parent.el.style.top.replace(/px/, '')) - 50).toString() + 'px'; }</script> <button type="button" onclick="demo_parent_child_field_blocking()">Parent/Child (blocking)</button>  
+    <script language="javascript" type="text/javascript">function demo_parent_child_field_blocking() { var parent = new DialogWindow('Parent: Try to close me'); parent.show(); var child = new DialogWindow('Child: Close me to access parent', { modal: 'parent' }, parent); child.show(); parent.el.style.left = (parseInt(parent.el.style.left.replace(/px/, '')) - 170).toString() + 'px'; parent.el.style.top = (parseInt(parent.el.style.top.replace(/px/, '')) - 50).toString() + 'px'; }</script> <button type="button" onclick="demo_parent_child_field_blocking()">Parent/Child (blocking)</button>  
 
 * * *
 
@@ -186,21 +186,17 @@ Demonstrates a parent's "ownership" of a child window, forcing the child window 
 
 This sample shows how the HTML of a DOM element can be used for the content body.
 
-<script type="text/javascript">function demo_domhtml() { var frmwin = new DialogWindow( $('#demo_dom_form_container').html(), { title: 'DOM Referenced Dialog' }); frmwin.show(); }</script> <button type="button" onclick="demo_domhtml()">DOM Referenced Dialog</button>  
+    <script type="text/javascript">function demo_domhtml() { var frmwin = new DialogWindow( $('#demo_dom_form_container').html(), { title: 'DOM Referenced Dialog' }); frmwin.show(); }</script> <button type="button" onclick="demo_domhtml()">DOM Referenced Dialog</button>  
 
 * * *
-
-<div id="demo_dom_container">
 
 ### DOM Element (direct)
 
 This sample shows how a DOM element can be directly used for the content body. _Note: Once consumed, it is destroyed with the window._
 
-<script type="text/javascript">function demo_dom() { if ($('#demo_dom_form2').length == 0) { alert('No DOM object available to consume.'); } var frmwin = new DialogWindow( $('#demo_dom_form2')[0], { title: 'DOM Referenced Dialog' }); frmwin.show(); }</script> <button type="button" onclick="demo_dom()">DOM Referenced Dialog</button>  
+    <script type="text/javascript">function demo_dom() { if ($('#demo_dom_form2').length == 0) { alert('No DOM object available to consume.'); } var frmwin = new DialogWindow( $('#demo_dom_form2')[0], { title: 'DOM Referenced Dialog' }); frmwin.show(); }</script> <button type="button" onclick="demo_dom()">DOM Referenced Dialog</button>  
 
 * * *
-
-<div id="demo_serialize_container">
 
 ### Form Serialization
 
@@ -213,11 +209,7 @@ This sample demonstrates the two types of form serialization: default encoding a
 	</script>
 	<button type="button" onclick="demo_domserialize()">DOM Referenced Dialog</button>  
 
-</div>
-
-<div id="Options">
-
-<pre>DialogWindow.DefaultOptions = {
+    DialogWindow.DefaultOptions = {
 
         containerWindowElement: null,
 
@@ -266,40 +258,4 @@ This sample demonstrates the two types of form serialization: default encoding a
 
         cancelText: 'Cancel'        // the text to be displayed on the Cancel button
 };
-        </pre>
 
-</div>
-
-<div id="Download">Download jqDialogForms v1.2 here: [jqDialogForms_1.2.zip](jqDialogForms_1.2.zip)</div>
-
-</div>
-
-<div style="display: none" id="demo_dom_form_container">
-
-<div id="demo_dom_form">
-
-<div><span style="width: 100px">Name:</span><input name="Name"></div>
-
-<div><span style="width: 100px">Status:</span> <select name="Status"><option>Available</option> <option>Away</option> <option>Offline</option></select></div>
-
-</div>
-
-</div>
-
-<div style="display: none" id="demo_dom_form_container2">
-
-<div id="demo_dom_form2">
-
-<div><span style="width: 100px">Name:</span><input name="Name"></div>
-
-<div><span style="width: 100px">Status:</span> <select name="Status"><option>Available</option> <option>Away</option> <option>Offline</option></select></div>
-
-</div>
-
-</div>
-
-<div style="display: none" id="demo_serialize_buttons">
-
-<div><button type="button" onclick="alert($(this).parent().parent().data('dwindow').serialize());">Default Serialization</button> <button type="button" onclick="alert($(this).parent().parent().data('dwindow').serialize(true));">JSON Serialization</button></div>
-
-</div>
