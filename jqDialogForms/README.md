@@ -115,8 +115,7 @@ For example,
 
 This sample demonstrates the simplest form of a dialog.
 
-<button type="button" id="demo_alert" onclick="(new DialogWindow('Hi.')).show();">Alert</button>  
-[Source](javascript:$('#demo_alert_srclink').before($('<pre>' + $('#demo_alert').attr('onclick') + '</pre>')).remove();void(0);)</div>
+    <button type="button" id="demo_alert" onclick="(new DialogWindow('Hi.')).show();">Alert</button>  
 
 * * *
 
@@ -126,9 +125,18 @@ This sample demonstrates the simplest form of a dialog.
 
 This sample displays multiple dialog windows. Click on the titlebar, message text, or gray space of each one to "activate" it.
 
-<script type="text/javascript" language="javascript">function demo_multiact() { var txt = 'Click to activate'; var win1 = new DialogWindow(txt), win2 = new DialogWindow(txt), win3 = new DialogWindow(txt); win1.show(); win2.show(); win3.show(); win1.el.style.left = (parseInt(win1.el.style.left.replace(/px/, '')) - 80).toString() + 'px'; win1.el.style.top = (parseInt(win1.el.style.top.replace(/px/, '')) - 20).toString() + 'px'; win3.el.style.left = (parseInt(win3.el.style.left.replace(/px/, '')) + 80).toString() + 'px'; win3.el.style.top = (parseInt(win3.el.style.top.replace(/px/, '')) + 20).toString() + 'px'; }</script> <button type="button" id="demo_multiact" onclick="demo_multiact()">Multiple windows and activation/selection</button>  
-[Source](javascript:$('#demo_multiact_srclink').before($('<pre>' + demo_multiact + '</pre>')).remove();void(0);)</div>
-
+    <script>
+    function demo_multiact() {
+        var txt = 'Click to activate';
+		var win1 = new DialogWindow(txt), win2 = new DialogWindow(txt), win3 = new DialogWindow(txt);
+		win1.show();
+		win2.show();
+		win3.show();
+		win1.el.style.left = (parseInt(win1.el.style.left.replace(/px/, '')) - 80).toString() + 'px'; win1.el.style.top = (parseInt(win1.el.style.top.replace(/px/, '')) - 20).toString() + 'px';
+		win3.el.style.left = (parseInt(win3.el.style.left.replace(/px/, '')) + 80).toString() + 'px'; win3.el.style.top = (parseInt(win3.el.style.top.replace(/px/, '')) + 20).toString() + 'px';
+	}</script>
+	<button type="button" id="demo_multiact" onclick="demo_multiact()">Multiple windows and activation/selection</button>
+	
 * * *
 
 <div id="demo_apply_handler_container">
@@ -137,9 +145,21 @@ This sample displays multiple dialog windows. Click on the titlebar, message tex
 
 Demonstrates the automatic detection of changes to form fields, followed by the manual handling of the 'Apply' event, which is raised when the OK button or the Apply button is clicked. (OK=Apply+Close.)
 
-<script type="text/javascript" language="javascript">function demo_apply_handler() { var applwin = new DialogWindow('change me<br><input type="textbox" name="Field1" value="Field1_Value" />', { hideApplyButton: false, hideCancelButton: false }); // assign event handler for apply event applwin.apply(function() { alert('applying...'); alert(this.serialize(true)); }); applwin.el.style.width = '400px'; applwin.el.style.height = '200px'; applwin.show(); }</script> <button type="button" id="demo_apply_handler" onclick="demo_apply_handler()">'Apply' Handler</button>  
-[Source](javascript:$('#demo_apply_handler_srclink').before($('<pre>' + demo_apply_handler.toString().replace(/</g, '&lt;') + '</pre>')).remove();void(0);)</div>
-
+    <script type="text/javascript" language="javascript">
+	    function demo_apply_handler() { 
+		    var applwin = new DialogWindow('change me<br><input type="textbox" name="Field1" value="Field1_Value" />', { 
+			    hideApplyButton: false, hideCancelButton: false }); // assign event handler for apply event
+			applwin.apply(function() {
+				alert('applying...');
+				alert(this.serialize(true)); });
+				applwin.el.style.width = '400px';
+				applwin.el.style.height = '200px';
+				applwin.show();
+			});
+		}
+	</script>
+	<button type="button" id="demo_apply_handler" onclick="demo_apply_handler()">'Apply' Handler</button>
+	
 * * *
 
 <div id="demo_parent_child_container">
@@ -148,8 +168,16 @@ Demonstrates the automatic detection of changes to form fields, followed by the 
 
 Demonstrates a parent's "ownership" of a child window, forcing the child window to stay on top of the parent window.
 
-<script language="javascript" type="text/javascript">function demo_parent_child() { var parent = new DialogWindow('Parent: Try to select me'); parent.show(); var child = new DialogWindow('Child: I\'m pretty much parent-owned modeless.', null, parent); child.show(); parent.el.style.left = (parseInt(parent.el.style.left.replace(/px/, '')) - 225).toString() + 'px'; parent.el.style.top = (parseInt(parent.el.style.top.replace(/px/, '')) - 20).toString() + 'px'; }</script> <button type="button" onclick="demo_parent_child()">Parent/Child</button>  
-[Source](javascript:$('#demo_parent_child_srclink').before($('<pre>' + demo_parent_child.toString().replace(/</g, '&lt;') + '</pre>')).remove();void(0);)</div>
+    <script language="javascript" type="text/javascript">
+	    function demo_parent_child() {
+            var parent = new DialogWindow('Parent: Try to select me');
+			parent.show();
+			var child = new DialogWindow('Child: I\'m pretty much parent-owned modeless.', null, parent);
+			child.show();
+			parent.el.style.left = (parseInt(parent.el.style.left.replace(/px/, '')) - 225).toString() + 'px';
+			parent.el.style.top = (parseInt(parent.el.style.top.replace(/px/, '')) - 20).toString() + 'px';
+		}</script>
+		<button type="button" onclick="demo_parent_child()">Parent/Child</button>  
 
 * * *
 
@@ -192,8 +220,12 @@ This sample shows how a DOM element can be directly used for the content body. _
 
 This sample demonstrates the two types of form serialization: default encoding and JSON.
 
-<script type="text/javascript">function demo_domserialize() { var frmwin = new DialogWindow( $('#demo_dom_form_container').html() + $('#demo_serialize_buttons').html(), { title: 'DOM Referenced Dialog' }); frmwin.show(); }</script> <button type="button" onclick="demo_domserialize()">DOM Referenced Dialog</button>  
-[Source](javascript:var tmpdiv=$('<div></div>');$('#demo_domserialize_srclink').before($('<pre>' + tmpdiv.append($('#demo_dom_form_container')).append($('#demo_serialize_buttons')).html().replace(/</g,'&lt;') + '\n</pre><hr size="1" width="50%" align="left" /><pre>' + demo_domserialize.toString().replace(/</g, '&lt;') + '</pre>')).remove();$(document.body).append(tmpdiv);void(0);)</div>
+    <script type="text/javascript">
+        function demo_domserialize() {
+		    var frmwin = new DialogWindow( $('#demo_dom_form_container').html() + $('#demo_serialize_buttons').html(), { title: 'DOM Referenced Dialog' }); frmwin.show();
+		}
+	</script>
+	<button type="button" onclick="demo_domserialize()">DOM Referenced Dialog</button>  
 
 </div>
 
