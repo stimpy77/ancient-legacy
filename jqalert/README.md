@@ -1,6 +1,13 @@
+## *Rough HTML-to-Markdown conversion*
+
+This README.md file is a quick and dirty automated conversion from HTML to Markdown. As such, sample images and other layout components are not rendered.
+Please clone the folder and observe the index.html file
+
+----
+
 # jqalert - The jQuery-empowered alert() replacement
 
-_ jqalert_ is a Javascript library that uses jQuery to create a compelling alternative to window.alert().
+**jqalert** is a Javascript library that uses jQuery to create a compelling alternative to window.alert().
 
 Author: Jon Davis [ [http://www.jondavis.net/](http://www.jondavis.net/) ]
 
