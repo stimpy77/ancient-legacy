@@ -99,14 +99,6 @@ For example,
 > myWindow.apply(function() { alert('applying: ' + myWindow.serialize(true)); });
 > myWindow.show();
 >             </pre>
-> 
-> <script type="text/javascript" language="javascript">function example2() { var msg = '<p>Please enter your name.</p><p><input name="your_name" style="width: 250px" /></p>'; var myWindow = new DialogWindow(msg, { title: 'Enter your name' }); myWindow.el.style.width = '300px'; myWindow.beforeShow(function() { alert('beforeShow'); }); myWindow.show(function() { alert('showing'); }); myWindow.apply(function() { alert('applying: ' + myWindow.serialize(true)); }); myWindow.show(); }</script> <button type="button" onclick="example2()">Try it</button>
-
-</div>
-
-<div id="Demo">
-
-<div id="demo_alert_container">
 
 ### Alert
 
@@ -185,7 +177,6 @@ Demonstrates a parent's "ownership" of a child window, forcing the child window 
 Demonstrates a parent's "ownership" of a child window, forcing the child window to stay on top of the parent window, and blocking the parent's input fields until the child window is closed.
 
 <script language="javascript" type="text/javascript">function demo_parent_child_field_blocking() { var parent = new DialogWindow('Parent: Try to close me'); parent.show(); var child = new DialogWindow('Child: Close me to access parent', { modal: 'parent' }, parent); child.show(); parent.el.style.left = (parseInt(parent.el.style.left.replace(/px/, '')) - 170).toString() + 'px'; parent.el.style.top = (parseInt(parent.el.style.top.replace(/px/, '')) - 50).toString() + 'px'; }</script> <button type="button" onclick="demo_parent_child_field_blocking()">Parent/Child (blocking)</button>  
-[Source](javascript:$('#demo_parent_child_field_blocking_srclink').before($('<pre>' + demo_parent_child_field_blocking.toString().replace(/</g, '&lt;') + '</pre>')).remove();void(0);)</div>
 
 * * *
 
@@ -196,7 +187,6 @@ Demonstrates a parent's "ownership" of a child window, forcing the child window 
 This sample shows how the HTML of a DOM element can be used for the content body.
 
 <script type="text/javascript">function demo_domhtml() { var frmwin = new DialogWindow( $('#demo_dom_form_container').html(), { title: 'DOM Referenced Dialog' }); frmwin.show(); }</script> <button type="button" onclick="demo_domhtml()">DOM Referenced Dialog</button>  
-[Source](javascript:var tmpdiv=$('<div></div>');$('#demo_domhtml_srclink').before($('<pre>' + tmpdiv.append($('#demo_dom_form_container')).html().replace(/</g,'&lt;') + '\n</pre><hr size="1" width="50%" align="left" /><pre>' + demo_domhtml.toString().replace(/</g, '&lt;') + '</pre>')).remove();$(document.body).append(tmpdiv);void(0);)</div>
 
 * * *
 
@@ -207,7 +197,6 @@ This sample shows how the HTML of a DOM element can be used for the content body
 This sample shows how a DOM element can be directly used for the content body. _Note: Once consumed, it is destroyed with the window._
 
 <script type="text/javascript">function demo_dom() { if ($('#demo_dom_form2').length == 0) { alert('No DOM object available to consume.'); } var frmwin = new DialogWindow( $('#demo_dom_form2')[0], { title: 'DOM Referenced Dialog' }); frmwin.show(); }</script> <button type="button" onclick="demo_dom()">DOM Referenced Dialog</button>  
-[Source](javascript:var tmpdiv=$('<div></div>');$('#demo_dom_srclink').before($('<pre>' + tmpdiv.append($('#demo_dom_form_container2')).html().replace(/</g,'&lt;') + '\n</pre><hr size="1" width="50%" align="left" /><pre>' + demo_dom.toString().replace(/</g, '&lt;') + '</pre>')).remove();$(document.body).append(tmpdiv);void(0);)</div>
 
 * * *
 
