@@ -257,5 +257,5 @@ This sample demonstrates the two types of form serialization: default encoding a
         applyText: 'Apply',         // the text to be displayed on the Apply button
 
         cancelText: 'Cancel'        // the text to be displayed on the Cancel button
-};
+    };
 
