@@ -85,13 +85,10 @@ Here is the constructor signature for the DialogWindow object:
 
 For example,
 
-> <pre>var msg = 'Greetings.';
-> var myWindow = new DialogWindow(msg, {title: 'Enter your name'});
-> myWindow.show();
->             </pre>
-> 
-> <script type="text/javascript" language="javascript">function example1() { var msg = 'Greetings'; var myWindow = new DialogWindow(msg, { title: 'Enter your name' }); myWindow.show(); }</script> <button type="button" onclick="example1()">Try it</button>
-
+    var msg = 'Greetings.';
+    var myWindow = new DialogWindow(msg, {title: 'Enter your name'});
+    myWindow.show();
+    
 * * *
 
 > <pre>var msg = '<p>Please enter your name.</p><p><input name="your_name" style="width: 250px" /></p>';
