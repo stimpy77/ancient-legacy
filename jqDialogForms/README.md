@@ -2,7 +2,7 @@
 
 This README.md file is a direct automated conversion of
 index.html to Markdown format. As such, it will have several
-inconsistencies an formatting and missing images.
+inconsistencies and formatting and missing images.
 
 This project was an effort that shortly preceded jQuery UI,
 back when jQuery itself was relatively new, and plugins were
