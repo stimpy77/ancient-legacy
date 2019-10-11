@@ -1,0 +1,99 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+
+<div id="results"></div>
+
+<div><button id="reload">Reload</button> <button id="invalidate">Invalidate</button></div>
+
+@section scripts {
+    <script>
+        var $APPROOT = "@Url.Content("~/")";
+
+        var httpGET = function(url, data, callback) {
+            return httpAction(url, data, callback, "GET");
+        };
+
+        var httpPOST = function(url, data, callback) {
+            return httpAction(url, data, callback, "POST");
+        };
+
+        var httpAction = function(url, data, callback, method) {
+            url = cachebust(url);
+            if (typeof(data) === "function") {
+                callback = data;
+                data = null;
+            }
+            return $.ajax(url, {
+                data: data,
+                type: method,
+                success: function(responsedata, status, xhr) {
+                    handleResponse(responsedata, status, xhr, callback);
+                }
+            });
+        };
+
+        var handleResponse = function(data, status, xhr, callback) {
+            handleInvalidationFlags(xhr);
+            callback.call(this, data, status, xhr);
+        };
+
+        function handleInvalidationFlags(xhr) {
+            // capture HTTP header
+            var invalidatedItemsHeader = xhr.getResponseHeader("X-Invalidate-Cache-Item");
+            if (!invalidatedItemsHeader) return;
+            invalidatedItemsHeader = invalidatedItemsHeader.split(';');
+            
+            // get invalidation flags from session storage
+            var invalidatedItems = sessionStorage.getItem("invalidated-cache-items");
+            invalidatedItems = invalidatedItems ? JSON.parse(invalidatedItems) : {};
+            
+            // update invalidation flags data set
+            for (var i in invalidatedItemsHeader) {
+                invalidatedItems[prepurl(invalidatedItemsHeader[i])] = Date.now();
+            }
+            
+            // store revised invalidation flags data set back into session storage
+            sessionStorage.setItem("invalidated-cache-items", JSON.stringify(invalidatedItems));
+        }
+
+        // since we're using IIS/ASP.NET which ignores case on the path, we need a function to force lower-case on the path
+
+        function prepurl(u) {
+            return u.split('?')[0].toLowerCase() + (u.indexOf("?") > -1 ? "?" + u.split('?')[1] : "");
+        }
+
+        function cachebust(url) {
+            // get invalidation flags from session storage
+            var invalidatedItems = sessionStorage.getItem("invalidated-cache-items");
+            invalidatedItems = invalidatedItems ? JSON.parse(invalidatedItems) : {};
+
+            // if item match, return concatonated URL
+            var invalidated = invalidatedItems[prepurl(url)];
+            if (invalidated) {
+                return url + (url.indexOf("?") > -1 ? "&" : "?") + "_nocache=" + invalidated;
+            }
+            // no match; return unmodified
+            return url;
+        }
+
+        // application logic
+        httpGET($APPROOT + "Home/GetData", function(o) {
+            $('#results').text("Last modified: " + o.LastModified);
+        });
+
+        $('#reload').on('click', function() {
+            window.location.reload();
+        });
+
+        $('#invalidate').on('click', function() {
+            httpPOST($APPROOT + "Home/DoSomething", function(o) {
+                window.location.reload();
+            });
+        });
+    </script>
+}
