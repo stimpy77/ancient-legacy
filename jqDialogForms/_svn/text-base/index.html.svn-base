@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jqDialogForms</title>
+    <style type="text/css">
+        body 
+        {
+            font-family: Verdana, Tahoma, Arial, Helvetica, Sans-Serif;
+            font-size: 0.8em;
+            margin: 0px;
+            padding: 0px;
+        }
+        body .dialogWindow 
+        {
+            font-size: 1.2em;
+        }
+        #header {
+            background-color: #44f;
+            background-image: url('../images/vgradient-blue.png');
+            background-repeat: repeat-x;
+            min-height: 85px;
+            vertical-align: middle;
+            color: White;
+            position: relative;
+        }
+        #header h1 
+        {
+            font-size: 1.3em;
+            padding: 14px;
+            text-align: center;
+            margin: 0px;
+            font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+        }
+        #header-bottom 
+        {
+            color: #000000;
+            background-color: #c0c0c0;
+            border-bottom: outset 1px #c0c0c0;
+            height: 25px;
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            padding: 6px 10px 0px 10px;
+        }
+        #contentBody 
+        {
+            padding: 10px;
+        }
+        
+        .sourceLink 
+        {
+            font-size: 0.7em;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/jqDialogForms.css" />
+    <link rel="stylesheet" type="text/css" href="css/doc/ui.theme.css">
+
+    
+    <script type="text/javascript" language="javascript" src="js/jquery-1.3.1.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/jqDnR.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/jqDialogForms.js">
+    </script>
+    
+    <script type="text/javascript" language="javascript" src="js/doc/jquery-ui-personalized-1.6rc5.min.js">
+    </script>
+    
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function() {
+            $('#contentBody').tabs();
+        });
+    </script>
+</head>
+<body>
+    <div id="header">
+        <h1>jqDialogForms</h1>
+        <div id="header-bottom">
+            <div>Comment on my blog: <a href="http://www.jondavis.net/techblog/post/2009/01/05/New-Javascript-Library-jqDialogForms.aspx">http://www.jondavis.net/techblog/post/2009/01/05/New-Javascript-Library-jqDialogForms.aspx</a></div>
+        </div>
+    </div>
+    <div id="contentBody">
+        <ul>
+            <li><a href="#About"><span>About jqDialogForms</span></a></li>
+            <li><a href="#HowToUse"><span>How To Use</span></a></li>
+            <li><a href="#Demo"><span>Demo</span></a></li>
+            <li><a href="#Options"><span>Options</span></a></li>
+            <li><a href="#Download"><span>Download</span></a></li>
+        </ul>
+        <div id="About">
+            <img src="images/doc/sshot_jqDF_Alert.gif" alt="" align="right" />
+            <p>
+                jqDialogForms is a Javascript library based on jQuery that was 
+                built for producing windowed forms
+                using strictly dynamic HTML. The inspiration comes from the development workflow
+                of Visual Basic "Forms" and .NET Windows Forms, combined with the utility of
+                HTML &lt;form&gt;'s and jQuery's serialize(). 
+            </p>
+            <p>Features:
+            </p>
+            <ul>
+            		
+	            <li>Modeless+parent disabling+serializeable dialog form windows<br>
+		            </li>	
+	            <li>Reference a DOM element or a string of HTML as the message or form fields to be displayed</li>	
+	            <li>Automatically switch from fixed positioning to absolute positioning when in quirks mode IE7, and position to the current vertical scroll position</li>	
+	            <li>jqDnR enabled: Resizeable, Windows 9x style</li>	
+	            <li>jqDnR enabled: Drag around the screen via the title bar</li>	
+	            <li>Activateable; show multiple windows, and activate/focus each window as it is clicked on (Windows 9x application windows activation behavior) </li>	
+	            <li>Lacking CSS conformance of a dialog window container, a prefab one is used that includes a title bar, a close box, and OK/Cancel buttons.</li>	
+	            <li>OK button invokes Apply event handler and then, if not invalidated, closes the window. </li>	
+	            <li>Dirty state detection; on editable forms, OK/Apply buttons are disabled unless a field is changed </li>	
+	            <li>Exposes form serialize functions that outputs name/value HTML/querystring encoding (in the style of jQuery serialize()), or JSON serialization.</li>	
+	            <li>"Smart" top positioning for oversized dialogs</li>	
+	            <li>CSS-driven layout </li>
+            </ul>
+            <img src="images/doc/sshot_jqDF_childwin.gif" alt="" align="right" />
+            <p>
+Among the several known issues:
+</p>
+<ul>
+		
+	<li>Multiple windows do not retain their activation order.</li>	
+	<li>No modal dialog or truly modeless (non-disabling) support</li>	
+	<li><strike>No demo</strike> No extensive demo</li>	
+	<li>No documentation <br>
+		</li>
+</ul>
+<p>
+A few months back I released a Javascript library called <a href="http://www.jondavis.net/codeprojects/jqalert/">jqAlert</a>. I will probably rewrite jqAlert to use jqDialogForms. 
+</p>
+<p>
+It's NOT perfect, there are a few missing parts and pieces, but as far
+as I know it's a stable beta and can probably be used in production
+environments (I think).
+</p>
+        </div>
+        <div id="HowToUse">
+            <p>Unlike normal jQuery plug-ins, jqDialogForms is only <em>dependent upon</em> jQuery, it does
+                not <em>attach to</em> jQuery.
+            </p>
+            <p>To use jqDialogForms, you must instantiate a new DialogWindow object
+                with your options, pass a function callback to its <code>apply()</code> event,
+                and then invoke its <code>show()</code> function.</p>
+            <p>Here is the constructor signature for the DialogWindow object:</p>
+            <blockquote><pre>var DialogWindow = function(optional_message, optional_options, optional_parentWindow) { ... }</pre></blockquote>
+            <p>For example,</p>
+            <blockquote>
+            <pre>var msg = 'Greetings.';
+var myWindow = new DialogWindow(msg, {title: 'Enter your name'});
+myWindow.show();
+            </pre>
+            <script type="text/javascript" language="javascript">
+                function example1() {
+                    var msg = 'Greetings';
+                    var myWindow = new DialogWindow(msg, { title: 'Enter your name' });
+                    myWindow.show();
+                }
+            </script>
+            <button type="button" onclick="example1()">Try it</button>
+            </blockquote>
+            <hr />
+            <blockquote>
+            <pre>var msg = '&lt;p&gt;Please enter your name.&lt;/p&gt;&lt;p&gt;&lt;input name="your_name" style="width: 250px" /&gt;&lt;/p&gt;';
+var myWindow = new DialogWindow(msg, {title: 'Enter your name'});
+myWindow.el.style.width = '300px';
+myWindow.beforeShow(function() { alert('beforeShow'); });
+myWindow.show(function() { alert('showing'); });
+myWindow.apply(function() { alert('applying: ' + myWindow.serialize(true)); });
+myWindow.show();
+            </pre>
+            <script type="text/javascript" language="javascript">
+                function example2() {
+                    var msg = '<p>Please enter your name.</p><p><input name="your_name" style="width: 250px" /></p>';
+                    var myWindow = new DialogWindow(msg, { title: 'Enter your name' });
+                    myWindow.el.style.width = '300px';
+                    myWindow.beforeShow(function() { alert('beforeShow'); });
+                    myWindow.show(function() { alert('showing'); });
+                    myWindow.apply(function() { alert('applying: ' + myWindow.serialize(true)); });
+                    myWindow.show();
+                }
+            </script>
+            <button type="button" onclick="example2()">Try it</button>
+            </blockquote>
+        </div>
+        <div id="Demo">
+            
+            <div id="demo_alert_container">
+                <h3>Alert</h3>
+                <p>This sample demonstrates the simplest form of a dialog.</p>
+                <button type="button" id="demo_alert" onclick="(new DialogWindow('Hi.')).show();">Alert</button><br />
+                <a class="sourceLink" id="demo_alert_srclink" href="javascript:$('#demo_alert_srclink').before($('<pre>' + $('#demo_alert').attr('onclick') + '</pre>')).remove();void(0);">Source</a>
+            </div>
+            <hr size="1" />
+            <div id="demo_multiact_container">
+                <h3>Multiple Forms &amp; Activation</h3>
+                <p>This sample displays multiple dialog windows. Click on the titlebar, message text, or gray space of each one to "activate" it.</p>
+                <script type="text/javascript" language="javascript">
+                    function demo_multiact() {
+                        var txt = 'Click to activate';
+                        var win1 = new DialogWindow(txt),
+                            win2 = new DialogWindow(txt),
+                            win3 = new DialogWindow(txt);
+                        win1.show();
+                        win2.show();
+                        win3.show();
+                        win1.el.style.left = (parseInt(win1.el.style.left.replace(/px/, '')) - 80).toString() + 'px';
+                        win1.el.style.top = (parseInt(win1.el.style.top.replace(/px/, '')) - 20).toString() + 'px';
+                        win3.el.style.left = (parseInt(win3.el.style.left.replace(/px/, '')) + 80).toString() + 'px';
+                        win3.el.style.top = (parseInt(win3.el.style.top.replace(/px/, '')) + 20).toString() + 'px';
+                    }
+                </script>
+                <button type="button" id="demo_multiact" onclick="demo_multiact()">Multiple windows and activation/selection</button><br />
+                <a class="sourceLink" id="demo_multiact_srclink" href="javascript:$('#demo_multiact_srclink').before($('<pre>' + demo_multiact + '</pre>')).remove();void(0);">Source</a>
+            </div>
+            <hr size="1" />
+            <div id="demo_apply_handler_container">
+                <h3>'Apply' Handler</h3>
+                <p>Demonstrates the automatic detection of changes to form fields,
+                    followed by the manual handling of the 'Apply' event, which is raised when
+                    the OK button or the Apply button is clicked. (OK=Apply+Close.)</p>
+                <script type="text/javascript" language="javascript">
+                    function demo_apply_handler() {
+                        var applwin = new DialogWindow('change me<br><input type="textbox" name="Field1" value="Field1_Value" />', {
+                                hideApplyButton: false,
+                                hideCancelButton: false
+                            });
+                            
+                        // assign event handler for apply event
+                        applwin.apply(function() {
+                            alert('applying...');
+                            alert(this.serialize(true));
+                        });
+                        applwin.el.style.width = '400px';
+                        applwin.el.style.height = '200px';
+                        applwin.show();
+                    }
+                </script>
+                <button type="button" id="demo_apply_handler" onclick="demo_apply_handler()">'Apply' Handler</button><br />
+                <a class="sourceLink" id="demo_apply_handler_srclink" href="javascript:$('#demo_apply_handler_srclink').before($('<pre>' + demo_apply_handler.toString().replace(/&lt;/g, '&amp;lt;') + '</pre>')).remove();void(0);">Source</a>
+            </div>
+            <hr size="1" />
+            <div id="demo_parent_child_container">
+                <h3>Parent/Child Window Ownership</h3>
+                <p>Demonstrates a parent's "ownership" of a child window, forcing the child
+                    window to stay on top of the parent window.</p>
+                <script language="javascript" type="text/javascript">
+                    function demo_parent_child() {
+                        var parent = new DialogWindow('Parent: Try to select me');
+                        parent.show();
+                        var child = new DialogWindow('Child: I\'m pretty much parent-owned modeless.', null, parent);
+                        child.show();
+                        parent.el.style.left = (parseInt(parent.el.style.left.replace(/px/, '')) - 225).toString() + 'px';
+                        parent.el.style.top = (parseInt(parent.el.style.top.replace(/px/, '')) - 20).toString() + 'px';
+                    }
+                </script>
+                <button type="button" onclick="demo_parent_child()">Parent/Child</button><br />
+                <a class="sourceLink" id="demo_parent_child_srclink" href="javascript:$('#demo_parent_child_srclink').before($('<pre>' + demo_parent_child.toString().replace(/&lt;/g, '&amp;lt;') + '</pre>')).remove();void(0);">Source</a>
+            </div>
+            <hr size="1" />
+            <div id="demo_parent_child_field_blocking_container">
+                <h3>Parent/Child Window Ownership With Parent Fields Blocking</h3>
+                <p>Demonstrates a parent's "ownership" of a child window, forcing the child
+                    window to stay on top of the parent window, and blocking the parent's
+                    input fields until the child window is closed.</p>
+                <script language="javascript" type="text/javascript">
+                    function demo_parent_child_field_blocking() {
+                        var parent = new DialogWindow('Parent: Try to close me');
+                        parent.show();
+                        var child = new DialogWindow('Child: Close me to access parent', { modal: 'parent' }, parent);
+                        child.show();
+                        parent.el.style.left = (parseInt(parent.el.style.left.replace(/px/, '')) - 170).toString() + 'px';
+                        parent.el.style.top = (parseInt(parent.el.style.top.replace(/px/, '')) - 50).toString() + 'px';
+                    }
+                </script>
+                <button type="button" onclick="demo_parent_child_field_blocking()">Parent/Child (blocking)</button><br />
+                <a class="sourceLink" id="demo_parent_child_field_blocking_srclink" href="javascript:$('#demo_parent_child_field_blocking_srclink').before($('<pre>' + demo_parent_child_field_blocking.toString().replace(/&lt;/g, '&amp;lt;') + '</pre>')).remove();void(0);">Source</a>
+            </div>
+            <hr size="1" />
+            <div id="demo_domhtml_container">
+                <h3>DOM Element => HTML</h3>
+                <p>This sample shows how the HTML of a DOM element can be used for the content body.</p>
+                <script type="text/javascript">
+                    function demo_domhtml() {
+                        var frmwin = new DialogWindow(
+                            $('#demo_dom_form_container').html(),
+                            {
+                                title: 'DOM Referenced Dialog'
+                            });
+                        frmwin.show();
+                    }
+                </script>
+                <button type="button" onclick="demo_domhtml()">DOM Referenced Dialog</button><br />
+                <a class="sourceLink" id="demo_domhtml_srclink" href="javascript:var tmpdiv=$('<div></div>');$('#demo_domhtml_srclink').before($('<pre>' + tmpdiv.append($('#demo_dom_form_container')).html().replace(/&lt;/g,'&amp;lt;') + '\n&lt;/pre&gt;&lt;hr size=&quot;1&quot; width=&quot;50%&quot; align=&quot;left&quot; /&gt;&lt;pre&gt;' + demo_domhtml.toString().replace(/&lt;/g, '&amp;lt;') + '</pre>')).remove();$(document.body).append(tmpdiv);void(0);">Source</a>
+            </div>
+            <hr size="1" />
+            <div id="demo_dom_container">
+                <h3>DOM Element (direct)</h3>
+                <p>This sample shows how a DOM element can be directly used for the content body. <em>Note: Once consumed, it is destroyed with the window.</em></p>
+                <script type="text/javascript">
+                    function demo_dom() {
+                        if ($('#demo_dom_form2').length == 0) {
+                            alert('No DOM object available to consume.');
+                        }
+                        var frmwin = new DialogWindow(
+                            $('#demo_dom_form2')[0],
+                            {
+                                title: 'DOM Referenced Dialog'
+                            });
+                        frmwin.show();
+                    }
+                </script>
+                <button type="button" onclick="demo_dom()">DOM Referenced Dialog</button><br />
+                <a class="sourceLink" id="demo_dom_srclink" href="javascript:var tmpdiv=$('<div></div>');$('#demo_dom_srclink').before($('<pre>' + tmpdiv.append($('#demo_dom_form_container2')).html().replace(/&lt;/g,'&amp;lt;') + '\n&lt;/pre&gt;&lt;hr size=&quot;1&quot; width=&quot;50%&quot; align=&quot;left&quot; /&gt;&lt;pre&gt;' + demo_dom.toString().replace(/&lt;/g, '&amp;lt;') + '</pre>')).remove();$(document.body).append(tmpdiv);void(0);">Source</a>
+            </div>
+            <hr size="1" />
+            <div id="demo_serialize_container">
+                <h3>Form Serialization</h3>
+                <p>This sample demonstrates the two types of form serialization: default encoding and JSON.</p>
+                <script type="text/javascript">
+                    function demo_domserialize() {
+                        var frmwin = new DialogWindow(
+                            $('#demo_dom_form_container').html() + $('#demo_serialize_buttons').html(),
+                            {
+                                title: 'DOM Referenced Dialog'
+                            });
+                        frmwin.show();
+                    }
+                </script>
+                <button type="button" onclick="demo_domserialize()">DOM Referenced Dialog</button><br />
+                <a class="sourceLink" id="demo_domserialize_srclink" href="javascript:var tmpdiv=$('<div></div>');$('#demo_domserialize_srclink').before($('<pre>' + tmpdiv.append($('#demo_dom_form_container')).html().replace(/&lt;/g,'&amp;lt;') + '\n&lt;/pre&gt;&lt;hr size=&quot;1&quot; width=&quot;50%&quot; align=&quot;left&quot; /&gt;&lt;pre&gt;' + demo_domserialize.toString().replace(/&lt;/g, '&amp;lt;') + '</pre>')).remove();$(document.body).append(tmpdiv);void(0);">Source</a>
+            </div>
+        </div>
+        <div id="Options">
+        <pre>
+DialogWindow.DefaultOptions = {
+
+        containerWindowElement: null,
+
+        reuseElement: false,        // set to true to use the element object rather 
+                                    // than its HTML
+        
+        title: 'Dialog',            // the text for dialogTitle element
+        
+        top: 'middle',              // set to pixels or to 'middle'
+        
+        left: 'center',             // set to pixels or to 'center'
+        
+        css: {                      // injected to the dialogWindow element
+            position: 'fixed',
+            minWidth: '120px'
+        },
+
+        iconUrl: '',                // if set, adds an image to dialogIcon element
+
+        modal: false,               // can be false (normal), true (page blocking -- not yet implemented), 
+                                    //      'modeless' (takes Z-Index of parent), or 
+                                    //      'parent' (like 'modeless' but also block 
+                                    //      parent's message and buttons)
+        showAnimate: null,          // function; callback function that uses jQuery
+
+                                    //      animate options structure, w/ added 
+                                    //      props: speed, easing, callback
+
+        hideAnimate: null,          // function; callback function for performing an 
+                                    //      animation after closing a form
+
+        hideOkCancelButtons: false, // hide the element that contains the OK / Apply 
+                                    //      / Cancel buttons
+
+        hideOkButton: false,        // hide the OK button
+
+        hideApplyButton: true,      // hide the Apply button
+
+        hideCancelButton: true,     // hide the Cancel button
+
+        allowResize: true,          // enable jqDnR for resizing
+
+        okText: 'OK',               // the text to be displayed on the OK button
+
+        applyText: 'Apply',         // the text to be displayed on the Apply button
+
+        cancelText: 'Cancel'        // the text to be displayed on the Cancel button
+};
+        </pre>
+        </div>
+        <div id="Download">
+            Download jqDialogForms v1.2 here:
+            <a href="jqDialogForms_1.2.zip">jqDialogForms_1.2.zip</a>
+        </div>
+    </div>
+    
+    
+    <div style="display: none" id="demo_dom_form_container">
+        <div id="demo_dom_form">
+            <div><span style="width: 100px">Name:</span><input name="Name" /></div>
+            <div><span style="width: 100px">Status:</span>
+                <select name="Status">
+                    <option>Available</option>
+                    <option>Away</option>
+                    <option>Offline</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div style="display: none" id="demo_dom_form_container2">
+        <div id="demo_dom_form2">
+            <div><span style="width: 100px">Name:</span><input name="Name" /></div>
+            <div><span style="width: 100px">Status:</span>
+                <select name="Status">
+                    <option>Available</option>
+                    <option>Away</option>
+                    <option>Offline</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div style="display: none" id="demo_serialize_buttons">
+        <div>
+            <button type="button" onclick="alert($(this).parent().parent().data('dwindow').serialize());">Default Serialization</button>
+            <button type="button" onclick="alert($(this).parent().parent().data('dwindow').serialize(true));">JSON Serialization</button>
+        </div>
+    </div>
+    
+</body>
+</html>

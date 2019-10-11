@@ -1,0 +1,1 @@
+<% Response.Redirect("http://silverlightcanvas.appspot.com/static/CanvasTest.html"); %>

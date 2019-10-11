@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jqalert - The jQuery-empowered alert() replacement</title>
+    <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.2.3.min.js"></script>
+    <script type="text/javascript" language="javascript" src="jqDnR.js"></script>
+    <script type="text/javascript" language="javascript" src="jqalert.js"></script>
+    <script type="text/javascript" language="javascript">
+	try {
+		window.alert = window.jqalert;
+	} catch (err) {
+		window.alert('Your browser does not support overloading window.alert.<br />' + err);
+	}
+    </script>
+    <style>
+        .jqalert 
+        {
+        	font-family: Tahoma, Arial, Sans-Serif;
+        	font-size: 10pt;
+        }
+        .myOwnStuff 
+        {
+        	background-color: Green;
+        }
+        .myOwnStuff .jqalert
+        {
+        	background-color: Green;
+        	left: 300px;
+        	top: 200px;
+        	padding: 3px;
+        	color: White;
+        }
+    </style>
+</head>
+<body>
+    <h1>jqalert - The jQuery-empowered alert() replacement</h1>
+    <p><i>&nbsp;jqalert</i> is a Javascript library that uses jQuery to create a compelling 
+        alternative to window.alert().</p>
+    <p>Author: Jon Davis [ <a href="http://www.jondavis.net/">http://www.jondavis.net/</a> ]</p>
+	<p>Current version: 0.9<br />
+    <a href="jqalert.js">jqalert.js</a> (unpacked - 25kb)</p>
+    <p>Requires: jQuery v1.2.3 @ <a href="http://www.jquery.com/">http://www.jquery.com/</a><br />
+        Suggested: jqDnR by Brice Burgess @
+        <a href="http://dev.iceburg.net/jquery/jqDnR/">
+        http://dev.iceburg.net/jquery/jqDnR/</a> </p>
+    <p>Note that this current build still has a few bugs and missing features. Among the 
+        bugs is the use of getEmptyOptions() and then setting {modal: true} can have 
+        unpredictable results, as demonstrated below.</p>
+    <h3>But that Windows 98 look is so ugly!</h3>
+    <p>Skin it. Or just wait; coming in a future build will be more named styles and named style extensibility. 
+        Also plan to add more optional buttons like OK / Cancel, or Yes / No, or Yes / 
+        No / Cancel, along with dialog result.</p>
+    <hr />
+    <h3>To use:</h3>
+    <p>Just add the following tags to your &lt;head&gt;:</p>
+    <blockquote>
+    <pre>&lt;script type=&quot;text/javascript&quot; language=&quot;javascript&quot; src=&quot;http://cachefile.net/scripts/jquery/1.2.3/jquery-1.2.3.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; language=&quot;javascript&quot; src=&quot;http://cachefile.net/scripts/jquery/plugins/jqDnR/2007.08.19r2/jqDnR.js&quot;&gt;&lt;/script&gt;
+<b>&lt;script type=&quot;text/javascript&quot; language=&quot;javascript&quot; src=&quot;http://cachefile.net/scripts/jquery/plugins/jqalert/0.9/jqalert.js&quot;&gt;&lt;/script&gt;</b></pre></blockquote>
+    <p>.. then when you need to do an alert(message), instead call jqalert(message, 
+        title).</p>
+	<p><b>To make <em>jqalert</em> override window.alert, add this to your &lt;head&gt; tag:</b></p>
+	<blockquote>
+		<pre>&lt;script type=&quot;text/javascript&quot; language=&quot;javascript&quot;&gt;
+try {
+	window.alert = window.jqalert;
+} catch (err) {
+	window.alert('Your browser does not support overloading window.alert. ' + err);
+}
+&lt;/script&gt;</pre>
+	</blockquote>
+    <hr />
+    <h3>Demos</h3>
+    <button onclick="jqalert('This is the default behavior. You can get this by calling jqalert(message, title).&lt;br /&gt;Notice that it is modal, and by including the <a href=&quot;http://dev.iceburg.net/jquery/jqDnR/&quot;>jqDnR extension script</a> you can<br />drag this window around with the title bar.', 'Demo: Default Behavior')">Default Behavior</button>
+    <button onclick="jqalert('Calling jqalert(message), without a title<br />parameter, removes the title bar.')">No Title</button>
+    <button onclick="jqalert('You can set a third parameter of {modal: false} to turn of modality. Notice<br />that you can still interact with the page even while this message is shown.', 'Demo: Non-Modal', {modal: false})">Non-Modal</button>
+    <button onclick="jqalert('&lt;h1&gt;HTML &lt;i&gt;Markup&lt;/i&gt;&lt;/h1&gt;&lt;p&gt;The &lt;em&gt;message&lt;/em&gt; parameter accepts HTML markup.&lt;/p&gt;', 'Demo: HTML Markup')">HTML Markup</button>
+    <button onclick="jqalert($(&quot;#htmlElementDemo&quot;).html(), 'Demo: HTML Element Message')">HTML Element Message</button>
+    <button onclick="jqalert('This demonstrates the use of an &quot;info&quot; icon by setting<br />the third parameter to {icon: &quot;alert_icon_info.png&quot;}.', 'Demo: Info Icon', {icon: &quot;alert_icon_info.png&quot;})">Info Icon</button>
+    <button onclick="jqalert('This demonstrates the use of an &quot;warning&quot; icon by setting<br />the third parameter to {icon: &quot;alert_warning_info.png&quot;}.', 'Demo: Warning Icon', {icon: &quot;alert_icon_warning.png&quot;})">Warning Icon</button>
+    <button onclick="jqalert('This demonstrates the use of an &quot;error&quot; icon by setting<br />the third parameter to {icon: &quot;alert_error_info.png&quot;}.', 'Demo: Error Icon', {icon: &quot;alert_icon_error.png&quot;})">Error Icon</button>
+    <button onclick="jqalert('If you want to build up your own custom parameters,<br />you might want to start with a clean slate by<br />setting for the third parameter &lt;tt&gt;jqalerter.getEmptyOptions()&lt;/tt&gt;.<br />You can add options inline using  &lt;tt&gt;.setOption(name, value)&lt;/tt&gt;.<br />In this case, modal: true and backgroundColor: white were used.', 'Demo: Empty Options', jqalerter.getEmptyOptions().setOption('modal', true).setOption('backgroundColor', 'white'))">Empty Options (unpredictable results)</button>
+    <button onclick="jqalert('The entire alert window can reuse a custom HTML element.<br />Here one is in a modal alert with a &quot;clean slate&quot; option set.', 'Demo: Custom Window Element', 
+        jqalerter.getEmptyOptions()
+        .setOption('modal', true)
+        .setOption('dynamicCss', true) // needed for z-indexing
+        .setOption('windowCss', null), // needed for z-indexing
+        $(&quot;#windowElementDemo&quot;)[0])" />Custom Window Element (modal; near-empty options) (unpredictable results)</button>
+    <button onclick="jqalert('The entire alert window can reuse a custom HTML element.<br />Here one is in a non-modal alert.<br />&nbsp;<br />Note: There is a bug right now, you cannot now use the modal one with clean slate options.', 'Demo: Custom Window Element', jqalerter.getDefaultOptions()
+        .setOption('dynamicCss', false)
+        .setOption('modal', false),
+        $(&quot;#windowElementDemo&quot;)[0])">Custom Window Element (non-modal; default options)</button>
+
+    <div id="htmlElementDemo" style="display:none;">
+        <h1><u>HTML</u> <i>message</i> from a &lt;div&gt;!</h1>
+        <p>Using HTML for the message can be handy if you want to "pre-fab" your<br />messages in markup without declaring the markup in script.</p>
+    </div>
+
+    <div id="windowElementDemo" class="myOwnStuff" style="display: none;">
+        <div class="jqalert-container">
+            <div class="jqalert">
+                <div class="jqalert-title" style="background-color: Blue; color: White;"></div>
+                <div class="jqalert-icon"></div>
+                <div class="jqalert-message"></div>
+                <div class="jqalert-buttons">
+                    <button onclick="window.jqalerter.closeVirtualWindow(this.parentNode.parentNode.parentNode);">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+</body>
+</html>

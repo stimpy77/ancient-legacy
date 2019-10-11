@@ -1,0 +1,44 @@
+8
+
+dir
+63
+svn://localhost/prj/trunk/cmd/CmdGoogle
+svn://localhost
+
+
+
+2008-04-30T23:29:04.403112Z
+60
+jon
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+b67f047c-9ba9-5641-88ce-e6f44d7703c4
+
+CmdGoogle.zip
+file
+
+
+
+
+2008-05-01T04:23:27.756112Z
+85a5a64efc623e115d708ec771db9690
+2008-04-30T23:29:04.403112Z
+60
+jon
+has-props
+
+Google
+dir
+

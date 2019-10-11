@@ -1,0 +1,1 @@
+start QuickieAlarm\bin\debug\QuickieAlarm.exe

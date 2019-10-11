@@ -1,0 +1,8 @@
+\\media2049\h$\Inetpub\wwwvirtual\www.jondavis.net\codeprojects\CmdGoogle\Google\bin\Release\Google.exe.config
+\\media2049\h$\Inetpub\wwwvirtual\www.jondavis.net\codeprojects\CmdGoogle\Google\obj\Release\Google.exe
+\\media2049\h$\Inetpub\wwwvirtual\www.jondavis.net\codeprojects\CmdGoogle\Google\obj\Release\Google.pdb
+\\media2049\h$\Inetpub\wwwvirtual\www.jondavis.net\codeprojects\CmdGoogle\Google\obj\Release\Google.XmlSerializers.dll
+\\media2049\h$\Inetpub\wwwvirtual\www.jondavis.net\codeprojects\CmdGoogle\Google\bin\Release\Google.exe
+\\media2049\h$\Inetpub\wwwvirtual\www.jondavis.net\codeprojects\CmdGoogle\Google\bin\Release\Google.XmlSerializers.dll
+\\media2049\h$\Inetpub\wwwvirtual\www.jondavis.net\codeprojects\CmdGoogle\Google\bin\Release\Google.pdb
+\\media2049\h$\Inetpub\wwwvirtual\www.jondavis.net\codeprojects\CmdGoogle\Google\obj\Release\ResolveAssemblyReference.cache

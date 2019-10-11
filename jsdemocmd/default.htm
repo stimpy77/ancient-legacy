@@ -1,0 +1,117 @@
+<html>
+<head>
+	<style>
+	body {
+		background-color: #e0e0e0;
+	}
+	textarea {
+		font-face: Consolas, Lucida Console, Courier New, Monotype;
+		font-size: 14pt;
+		padding: 20px;
+		width: 100%;
+		height: 95%;
+		background: #f0f0ff;
+	}
+	</style>
+	<script type="text/javascript" language="javascript" src="http://cachefile.net/scripts/using/1.3/using.js"></script>
+	<script type="text/javascript" language="javascript" src="fquery.js"></script>
+	<script type="text/javascript" language="javascript">
+		using.register("jquery", "jquery-1.2.3.js");
+		
+		var s=0;
+		function go() {
+			$$("#info")
+				.css('display', '')
+				.css('background-color', '#00ff00')
+				.css('font-family', 'Franklin Gothic, Arial, Sans Serif')
+				.css('font-weight', 'bold')
+				.css('font-size', 'smaller')
+				.css('height', '25px')
+				.html('Executed.');
+			setTimeout(function() {$$("#info").fadeOut()}, 1000);
+			var text = document.getElementsByTagName("textarea")[0].innerText;
+			using.injectScript(text, "scr"+(s++).toString());
+			document.getElementsByTagName("textarea")[0].innerText = "";
+		}
+		
+		function evalKey(tag, event) {
+		    var c = event.charCode;
+		    if (!c) c = event.keyCode;
+			switch (c) {
+			    case 9:
+			        var blur = tag.onblur;
+			        tag.onblur=function() {
+			            tag.focus();
+			            insertAtCaret(tag, "\t");
+			        }
+			        tag.focus();
+			        return false;
+			    case 10:
+				    go();
+				    break;
+				    
+			}
+		}
+		
+			function insertAtCaret(obj, text) {
+		        if(document.selection) {
+			        obj.focus();
+			        var orig = obj.value.replace(/\r\n/g, "\n");
+			        var range = document.selection.createRange();
+
+			        if(range.parentElement() != obj) {
+				        return false;
+			        }
+
+			        range.text = text;
+        			
+			        var actual = tmp = obj.value.replace(/\r\n/g, "\n");
+
+			        for(var diff = 0; diff < orig.length; diff++) {
+				        if(orig.charAt(diff) != actual.charAt(diff)) break;
+			        }
+
+			        for(var index = 0, start = 0; 
+				        tmp.match(text) 
+					        && (tmp = tmp.replace(text, "")) 
+					        && index <= diff; 
+				        index = start + text.length
+			        ) {
+				        start = actual.indexOf(text, index);
+			        }
+		        } else if(obj.selectionStart) {
+			        var start = obj.selectionStart;
+			        var end   = obj.selectionEnd;
+
+			        obj.value = obj.value.substr(0, start) 
+				        + text 
+				        + obj.value.substr(end, obj.value.length);
+		        }
+        		
+		        if(start != null) {
+			        setCaretTo(obj, start + text.length);
+		        } else {
+			        obj.value += text;
+		        }
+	        }
+        	
+	        function setCaretTo(obj, pos) {
+		        if(obj.createTextRange) {
+			        var range = obj.createTextRange();
+			        range.move('character', pos);
+			        range.select();
+		        } else if(obj.selectionStart) {
+			        obj.focus();
+			        obj.setSelectionRange(pos, pos);
+		        }
+	        }
+	</script>
+</head>
+<body>
+	
+	<textarea onkeypress="evalKey(this, event)" onkeydown='evalKey(this, event)'></textarea><br />
+	
+	<div style="float: left"><button onclick="go()">go</button></div><div id="info" style="display: none"></div>
+	
+</body>
+</html>

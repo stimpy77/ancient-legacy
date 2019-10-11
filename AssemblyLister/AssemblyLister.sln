@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyLister", "AssemblyLister.csproj", "{224EE54D-33D2-4F61-A1AA-C224E32F6B0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{224EE54D-33D2-4F61-A1AA-C224E32F6B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224EE54D-33D2-4F61-A1AA-C224E32F6B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224EE54D-33D2-4F61-A1AA-C224E32F6B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224EE54D-33D2-4F61-A1AA-C224E32F6B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,314 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:AlarmSettings.cs" caret="308" fromTop="13" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Program.cs" caret="1216" fromTop="36" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.Designer.cs" caret="1779" fromTop="19" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="381" fromTop="0" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="5052" fromTop="32" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="5347" fromTop="32" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="2070" fromTop="17" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="3845" fromTop="22" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="3139" fromTop="30" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="1709" fromTop="12" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="343" fromTop="15" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Program.cs" caret="709" fromTop="15" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Program.cs" caret="848" fromTop="20" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="5347" fromTop="24" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Program.cs" caret="1417" fromTop="28" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Program.cs" caret="1782" fromTop="28" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Program.cs" caret="1639" fromTop="24" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="1169" fromTop="17" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="2588" fromTop="12" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="4154" fromTop="26" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="4519" fromTop="14" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="5347" fromTop="14" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.cs" caret="971" fromTop="21" />
+      <File id="404AA377-C237-4A71-9161-D23A33D9A093/f:Clock.Designer.cs" caret="1779" fromTop="19" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerMSTest>
+    <UseTestRunConfigFromMetadataFile>False</UseTestRunConfigFromMetadataFile>
+  </UnitTestRunnerMSTest>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="7" />
+      <Item value="AlarmType" priority="4" />
+      <Item value="new" priority="7" />
+      <Item value="Binding" priority="0" />
+      <Item value="DevExpress" priority="0" />
+      <Item value="XtraEditors" priority="0" />
+      <Item value="Controls" priority="0" />
+      <Item value="InplaceType" priority="0" />
+      <Item value="if" priority="16" />
+      <Item value="SoundFilePicker" priority="6" />
+      <Item value="string" priority="3" />
+      <Item value="e" priority="8" />
+      <Item value="SoundFileDialog" priority="2" />
+      <Item value="this" priority="21" />
+      <Item value="result" priority="0" />
+      <Item value="DialogResult" priority="0" />
+      <Item value="SoundFilePicker_ButtonPressed" priority="0" />
+      <Item value="ButtonPressedEventArgs" priority="0" />
+      <Item value="private" priority="2" />
+      <Item value="bool" priority="2" />
+      <Item value="false" priority="4" />
+      <Item value="init_sfdiag" priority="1" />
+      <Item value="true" priority="6" />
+      <Item value="Environment" priority="1" />
+      <Item value="EnvironmentVariableTarget" priority="0" />
+      <Item value="prop" priority="2" />
+      <Item value="AlarmTypeEnum" priority="0" />
+      <Item value="DateTime" priority="14" />
+      <Item value="AlarmSettings" priority="10" />
+      <Item value="Clock" priority="3" />
+      <Item value="settings" priority="0" />
+      <Item value="TimeLabel" priority="3" />
+      <Item value="null" priority="5" />
+      <Item value="EventHandler" priority="1" />
+      <Item value="EventArgs" priority="2" />
+      <Item value="GoClick" priority="0" />
+      <Item value="NewsStyleUriParser" priority="0" />
+      <Item value="var" priority="2" />
+      <Item value="inputWindow" priority="12" />
+      <Item value="Application" priority="0" />
+      <Item value="InputWindow" priority="2" />
+      <Item value="sender" priority="3" />
+      <Item value="return" priority="0" />
+      <Item value="ret" priority="5" />
+      <Item value="AlarmTime" priority="1" />
+      <Item value="Enum" priority="0" />
+      <Item value="typeof" priority="0" />
+      <Item value="void" priority="0" />
+      <Item value="AlarmIsRunning" priority="3" />
+      <Item value="switch" priority="1" />
+      <Item value="Settings" priority="7" />
+      <Item value="case" priority="2" />
+      <Item value="break" priority="2" />
+      <Item value="AlarmIsStopped" priority="2" />
+      <Item value="AlarmOffButton" priority="1" />
+      <Item value="BeepTick" priority="2" />
+      <Item value="TimeSpan" priority="3" />
+      <Item value="Color" priority="1" />
+      <Item value="else" priority="4" />
+      <Item value="System" priority="3" />
+      <Item value="Media" priority="2" />
+      <Item value="SoundPlayer" priority="12" />
+      <Item value="IO" priority="0" />
+      <Item value="File" priority="0" />
+      <Item value="SystemSound" priority="0" />
+      <Item value="SystemSounds" priority="0" />
+      <Item value="Windows" priority="0" />
+      <Item value="Forms" priority="0" />
+      <Item value="MessageBox" priority="1" />
+      <Item value="catch" priority="0" />
+      <Item value="VisualBasic" priority="0" />
+      <Item value="Interaction" priority="0" />
+      <Item value="TimeTimer" priority="0" />
+      <Item value="Form" priority="0" />
+      <Item value="clock" priority="3" />
+      <Item value="static" priority="1" />
+      <Item value="ExitButton" priority="4" />
+      <Item value="MouseMoveTime" priority="0" />
+      <Item value="Drawing" priority="0" />
+      <Item value="Point" priority="0" />
+      <Item value="_mousepos" priority="7" />
+      <Item value="label1" priority="0" />
+      <Item value="event" priority="0" />
+      <Item value="RequestShowSettings" priority="0" />
+      <Item value="ShowSettingsButton" priority="0" />
+      <Item value="GoButton" priority="2" />
+      <Item value="GoButton_Click" priority="0" />
+      <Item value="Microsoft" priority="0" />
+      <Item value="Win32" priority="0" />
+      <Item value="SystemEvents" priority="0" />
+      <Item value="Cursors" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.DropDownButton">
+      <Item value="DataBindings" priority="0" />
+      <Item value="DropDownControl" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ControlBindingsCollection">
+      <Item value="SyncRoot" priority="0" />
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.ComboBoxEdit">
+      <Item value="DataBindings" priority="0" />
+      <Item value="InplaceType" priority="0" />
+      <Item value="Properties" priority="0" />
+      <Item value="Text" priority="2" />
+      <Item value="SelectedText" priority="1" />
+      <Item value="SelectedItem" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.ButtonEdit">
+      <Item value="Enabled" priority="0" />
+      <Item value="Text" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="IsNullOrEmpty" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.OpenFileDialog">
+      <Item value="ShowDialog" priority="0" />
+      <Item value="FileName" priority="0" />
+      <Item value="InitialDirectory" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.DialogResult">
+      <Item value="Cancel" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment">
+      <Item value="GetEnvironmentVariable" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:QuickieAlarm.Clock">
+      <Item value="Settings" priority="4" />
+      <Item value="BackColor" priority="3" />
+      <Item value="SoundPlayer" priority="2" />
+      <Item value="Show" priority="0" />
+      <Item value="Width" priority="0" />
+      <Item value="Close" priority="1" />
+      <Item value="Closed" priority="0" />
+      <Item value="RequestShowSettings" priority="0" />
+      <Item value="Hide" priority="0" />
+      <Item value="Cursor" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.LabelControl">
+      <Item value="Text" priority="0" />
+      <Item value="Left" priority="0" />
+      <Item value="Width" priority="0" />
+      <Item value="Font" priority="0" />
+      <Item value="Appearance" priority="0" />
+      <Item value="LineLocation" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Now" priority="9" />
+      <Item value="Parse" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="ToShortDateString" priority="1" />
+      <Item value="ToShortTimeString" priority="0" />
+      <Item value="AddDays" priority="0" />
+      <Item value="Subtract" priority="0" />
+      <Item value="AddSeconds" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:QuickieAlarm.InputWindow">
+      <Item value="GoClick" priority="2" />
+      <Item value="Hide" priority="1" />
+      <Item value="ShowDialog" priority="2" />
+      <Item value="Close" priority="0" />
+      <Item value="TopMost" priority="0" />
+      <Item value="ControlBox" priority="0" />
+      <Item value="GetSettings" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.Application">
+      <Item value="Run" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:QuickieAlarm.AlarmSettings">
+      <Item value="AlarmTime" priority="6" />
+      <Item value="AlarmType" priority="4" />
+      <Item value="SoundFile" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.TimeEdit">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@QuickieAlarm.AlarmSettings">
+      <Item value="AlarmTypeEnum" priority="7" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Enum">
+      <Item value="Parse" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Replace" priority="0" />
+      <Item value="ToLower" priority="1" />
+      <Item value="EndsWith" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@QuickieAlarm.AlarmSettings+AlarmTypeEnum">
+      <Item value="Beep" priority="2" />
+      <Item value="SoundFile" priority="1" />
+      <Item value="SilentVisual" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.SimpleButton">
+      <Item value="Visible" priority="5" />
+      <Item value="Hide" priority="0" />
+      <Item value="Focus" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.TimeSpan">
+      <Item value="FromSeconds" priority="1" />
+      <Item value="FromMilliseconds" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Color">
+      <Item value="Black" priority="1" />
+      <Item value="Maroon" priority="0" />
+      <Item value="Wheat" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Media.SoundPlayer">
+      <Item value="Play" priority="0" />
+      <Item value="SoundLocation" priority="2" />
+      <Item value="PlayLooping" priority="0" />
+      <Item value="Stop" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="Exists" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
+      <Item value="Show" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.VisualBasic.Interaction">
+      <Item value="Beep" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Timer">
+      <Item value="Enabled" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.XtraEditors.LabelControlAppearanceObject">
+      <Item value="TextOptions" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevExpress.Utils.TextOptions">
+      <Item value="HAlignment" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DevExpress.Utils.HorzAlignment">
+      <Item value="Center" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DevExpress.XtraEditors.LineLocation">
+      <Item value="Center" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.MouseEventArgs">
+      <Item value="Location" priority="1" />
+      <Item value="X" priority="1" />
+      <Item value="Y" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Nullable`1">
+      <Item value="Value" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Point">
+      <Item value="X" priority="1" />
+      <Item value="Y" priority="1" />
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Label">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.KeyPressEventArgs">
+      <Item value="KeyChar" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.Cursors">
+      <Item value="Default" priority="0" />
+      <Item value="No" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

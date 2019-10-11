@@ -1,0 +1,53 @@
+﻿.dialogWindow 
+{
+	background-color: #ddd;
+}
+
+.closeBox
+{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.closeBox a,
+.closeBox a:link 
+{
+    background-color: Maroon;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: solid 1px gray;
+    color: gray;
+    text-decoration: none;
+}
+
+.closeBox a:hover
+{
+    color: White;
+    border-color: White;
+}
+
+.dialogTitle
+{
+	color: White;
+	background-color: Blue;
+}
+
+.dialogBody
+{
+	color: White;
+	background-color: Green;
+}
+
+.okCancelButtons
+{
+	background-color: gray;
+}
+
+.dialogIcon {
+    background-color: Yellow;
+}

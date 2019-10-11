@@ -1,0 +1,82 @@
+8
+
+dir
+63
+svn://localhost/prj/trunk/cmd/CmdGoogle/Google
+svn://localhost
+
+
+
+2008-04-30T23:29:04.403112Z
+60
+jon
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+b67f047c-9ba9-5641-88ce-e6f44d7703c4
+
+Web References
+dir
+
+app.config
+file
+
+
+
+
+2008-05-01T04:23:27.730112Z
+6b3f5b9b8c98b62f65c25f4f2214c0cb
+2008-04-30T23:29:04.403112Z
+60
+jon
+
+Google.sln
+file
+
+
+
+
+2008-05-01T04:23:27.735112Z
+a36b68c4ef062ac2a073c91dfb42d865
+2008-04-30T23:29:04.403112Z
+60
+jon
+
+Google.csproj
+file
+
+
+
+
+2008-05-01T04:23:27.740112Z
+a1e94721f33aec71d3887f27eda7a607
+2008-04-30T23:29:04.403112Z
+60
+jon
+
+Program.cs
+file
+
+
+
+
+2008-05-01T04:23:27.744112Z
+f9886dc9101512cb9eb42e3c49e094e5
+2008-04-30T23:29:04.403112Z
+60
+jon
+
+Properties
+dir
+

@@ -1,0 +1,54 @@
+8
+
+dir
+71
+svn://localhost/prj/trunk/win/SetNetFxEnvVars
+svn://localhost
+
+
+
+2008-04-30T23:29:04.403112Z
+60
+jon
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+b67f047c-9ba9-5641-88ce-e6f44d7703c4
+
+SetNetFxEnvVars.exe
+file
+72
+
+
+
+2007-12-17T09:32:47.808075Z
+c79caee0e801aa942fa5e81a159db6fa
+2008-05-01T04:28:40.021112Z
+72
+jon
+has-props
+
+SetNetFxEnvVars_src.zip
+file
+
+
+
+
+2008-05-01T04:28:17.735112Z
+35697b74911d4b8b44d997ba13a1beec
+2008-04-30T23:29:04.403112Z
+60
+jon
+has-props
+
