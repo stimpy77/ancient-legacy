@@ -1,3 +1,4 @@
-<textarea onkeypress="evalKey(this, event)" onkeydown="evalKey(this, event)"></textarea>  
+I have no idea what this folder is.
 
-<div style="float: left"><button onclick="go()">go</button></div>
+
+I should throw it away. 

@@ -1,3 +1,23 @@
+#### *Rough HTML-to-Markdown conversion*
+
+This README.md file is a direct automated conversion of
+index.html to Markdown format. As such, it will have several
+inconsistencies an formatting and missing images.
+
+This project was an effort that shortly preceded jQuery UI,
+back when jQuery itself was relatively new, and plugins were
+the cool thing to produce and contribute to the Javascript
+community. jqDialogForms was essentially a modal dialog
+plugin with forms input support, so the idea / user story was, 
+in VB6-like UI style, a user might click a button, get a 
+pop-over "window" (really a floating div), fill out a form, 
+hit "OK", and it might use jQuery AJAX to submit the form in 
+that "window" and the "window" would close. All inline on the 
+page.
+
+----
+
+
 <div id="header">
 
 # jqDialogForms
