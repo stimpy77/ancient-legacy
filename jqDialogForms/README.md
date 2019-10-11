@@ -194,7 +194,18 @@ This sample shows how the HTML of a DOM element can be used for the content body
 
 This sample shows how a DOM element can be directly used for the content body. _Note: Once consumed, it is destroyed with the window._
 
-    <script type="text/javascript">function demo_dom() { if ($('#demo_dom_form2').length == 0) { alert('No DOM object available to consume.'); } var frmwin = new DialogWindow( $('#demo_dom_form2')[0], { title: 'DOM Referenced Dialog' }); frmwin.show(); }</script> <button type="button" onclick="demo_dom()">DOM Referenced Dialog</button>  
+    <script type="text/javascript">
+        function demo_dom() {
+		    if ($('#demo_dom_form2').length == 0) {
+			    alert('No DOM object available to consume.');
+			}
+			var frmwin = new DialogWindow( $('#demo_dom_form2')[0], {
+			    title: 'DOM Referenced Dialog'
+			});
+			frmwin.show();
+		}
+	</script>
+	<button type="button" onclick="demo_dom()">DOM Referenced Dialog</button>  
 
 * * *
 
