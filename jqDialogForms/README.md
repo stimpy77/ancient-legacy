@@ -209,6 +209,8 @@ This sample demonstrates the two types of form serialization: default encoding a
 	</script>
 	<button type="button" onclick="demo_domserialize()">DOM Referenced Dialog</button>  
 
+The default options ...
+
     DialogWindow.DefaultOptions = {
 
         containerWindowElement: null,
