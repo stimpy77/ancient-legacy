@@ -73,8 +73,6 @@ It's NOT perfect, there are a few missing parts and pieces, but as far as I know
 
 </div>
 
-<div id="HowToUse">
-
 Unlike normal jQuery plug-ins, jqDialogForms is only _dependent upon_ jQuery, it does not _attach to_ jQuery.
 
 To use jqDialogForms, you must instantiate a new DialogWindow object with your options, pass a function callback to its `apply()` event, and then invoke its `show()` function.
@@ -108,8 +106,6 @@ This sample demonstrates the simplest form of a dialog.
 
 * * *
 
-<div id="demo_multiact_container">
-
 ### Multiple Forms & Activation
 
 This sample displays multiple dialog windows. Click on the titlebar, message text, or gray space of each one to "activate" it.
@@ -127,8 +123,6 @@ This sample displays multiple dialog windows. Click on the titlebar, message tex
 	<button type="button" id="demo_multiact" onclick="demo_multiact()">Multiple windows and activation/selection</button>
 	
 * * *
-
-<div id="demo_apply_handler_container">
 
 ### 'Apply' Handler
 
@@ -150,8 +144,6 @@ Demonstrates the automatic detection of changes to form fields, followed by the 
 	<button type="button" id="demo_apply_handler" onclick="demo_apply_handler()">'Apply' Handler</button>
 	
 * * *
-
-<div id="demo_parent_child_container">
 
 ### Parent/Child Window Ownership
 
@@ -176,17 +168,33 @@ Demonstrates a parent's "ownership" of a child window, forcing the child window 
 
 Demonstrates a parent's "ownership" of a child window, forcing the child window to stay on top of the parent window, and blocking the parent's input fields until the child window is closed.
 
-    <script language="javascript" type="text/javascript">function demo_parent_child_field_blocking() { var parent = new DialogWindow('Parent: Try to close me'); parent.show(); var child = new DialogWindow('Child: Close me to access parent', { modal: 'parent' }, parent); child.show(); parent.el.style.left = (parseInt(parent.el.style.left.replace(/px/, '')) - 170).toString() + 'px'; parent.el.style.top = (parseInt(parent.el.style.top.replace(/px/, '')) - 50).toString() + 'px'; }</script> <button type="button" onclick="demo_parent_child_field_blocking()">Parent/Child (blocking)</button>  
+    <script language="javascript" type="text/javascript">
+    function demo_parent_child_field_blocking() {
+        var parent = new DialogWindow('Parent: Try to close me');
+        parent.show();
+        var child = new DialogWindow('Child: Close me to access parent', {
+            modal: 'parent'
+        }, parent);
+        child.show();
+        parent.el.style.left = (parseInt(parent.el.style.left.replace(/px/, '')) - 170).toString() + 'px';
+        parent.el.style.top = (parseInt(parent.el.style.top.replace(/px/, '')) - 50).toString() + 'px';
+    }</script>
+    <button type="button" onclick="demo_parent_child_field_blocking()">Parent/Child (blocking)</button>  
 
 * * *
-
-<div id="demo_domhtml_container">
 
 ### DOM Element => HTML
 
 This sample shows how the HTML of a DOM element can be used for the content body.
 
-    <script type="text/javascript">function demo_domhtml() { var frmwin = new DialogWindow( $('#demo_dom_form_container').html(), { title: 'DOM Referenced Dialog' }); frmwin.show(); }</script> <button type="button" onclick="demo_domhtml()">DOM Referenced Dialog</button>  
+    <script type="text/javascript">
+    function demo_domhtml() {
+	    var frmwin = new DialogWindow( $('#demo_dom_form_container').html(), {
+		    title: 'DOM Referenced Dialog'
+		});
+	    frmwin.show();
+	}</script>
+	<button type="button" onclick="demo_domhtml()">DOM Referenced Dialog</button>  
 
 * * *
 
